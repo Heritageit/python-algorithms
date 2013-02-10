@@ -5,6 +5,7 @@ db.sql
 *.db
 .*swp
 dev.py
+.gitignore
 .gitignore.un~
 *.pyc
 env
