@@ -1,4 +1,5 @@
 import time
+from copy import deepcopy
 from utils.benchmark import *
 from quickunion import *
 from quickunion_weighted import *
@@ -14,7 +15,7 @@ print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
 
 def test(classes, tree):
     for e in classes:
-        tmp = e(arr=tree)
+        tmp = e(arr=deepcopy(tree))
         print "%s:" % tmp.__class__.__name__
         t = time.clock()
         print "\tare 300201 and 249061 connected?: %s" % tmp.connected(300201, 249061)
