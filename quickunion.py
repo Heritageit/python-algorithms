@@ -21,12 +21,10 @@ class QuickUnionUF(object):
             el = self.id[el]
         return el
 
-    @benchmark
     def connected(self, p, q):
         '''check if they share the same root'''
         return self._get_root(p) == self._get_root(q)
 
-    @benchmark
     def union(self, p, q):
         '''change root of p to point to root of q'''
         i = self._get_root(p)
@@ -39,5 +37,6 @@ if __name__ == '__main__':
     tree = random_tree(1000000)
     arr = [QuickUnionUF]
     test(arr, tree)
+
 
 

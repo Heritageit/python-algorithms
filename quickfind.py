@@ -15,11 +15,9 @@ class QuickFindUF(object):
             temp_arr.append(e)
         return temp_arr
 
-    @benchmark
     def connected(self, p, q):
         return self.id[p] == self.id[q]
 
-    @benchmark
     def union(self, p, q):
         pid = self.id[p]
         qid = self.id[q]
@@ -33,3 +31,4 @@ if __name__ == '__main__':
     tree = random_tree(1000000)
     arr = [QuickFindUF]
     test(arr, tree)
+
