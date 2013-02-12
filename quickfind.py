@@ -15,9 +15,11 @@ class QuickFindUF(object):
             temp_arr.append(e)
         return temp_arr
 
+    @benchmark
     def connected(self, p, q):
         return self.id[p] == self.id[q]
 
+    @benchmark
     def union(self, p, q):
         pid = self.id[p]
         qid = self.id[q]
@@ -27,7 +29,12 @@ class QuickFindUF(object):
                 self.id[e] = qid
 
 if __name__ == '__main__':
-    arr = QuickFindUF(10000)
-    random_tree(arr)
-    print arr.connected(300, 2461)
-
+    tree = random_tree(1000000)
+    arr = QuickFindUF(arr=tree)
+    
+    print "are 300201 and 249061 connected?: "
+    print arr.connected(300201, 249061)
+    "union(300201, 249061): "
+    arr.union(300201, 249061)
+    print "are 300201 and 249061 connected?: "
+    print arr.connected(300201, 249061)

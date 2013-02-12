@@ -9,7 +9,7 @@ class QuickUnionWeighted(object):
             self.id = self._constuct_array(n)
         else:
             self.id = arr
-        self.sz = [0 for e in range(len(self.id)+1)]
+        self.sz = [0]*len(self.id) # faster than [0 for e in range(len(self.id)+1)]
 
     def _constuct_array(self, n):
         temp_arr = []
@@ -23,10 +23,12 @@ class QuickUnionWeighted(object):
             el = self.id[el]
         return el
 
+    @benchmark
     def connected(self, p, q):
         '''check if they share the same root'''
         return self._get_root(p) == self._get_root(q)
 
+    @benchmark
     def union(self, p, q):
         '''change root of p to point to root of q'''
         i = self._get_root(p)
@@ -50,13 +52,13 @@ class QuickUnionPathCompression(QuickUnionWeighted):
 
 
 if __name__ == '__main__':
-    tree = random_tree(100000)
+    tree = random_tree(1000000)
     arr = QuickUnionWeighted(arr=tree)
     
-    print "are 30001 and 2461 connected?: "
-    print arr.connected(30001, 2461)
-    "union(30001, 2461): "
-    arr.union(30001, 2461)
-    print "are 30001 and 2461 connected?: "
-    print arr.connected(30001, 2461)
+    print "are 300201 and 249061 connected?: "
+    print arr.connected(300201, 249061)
+    "union(300201, 249061): "
+    arr.union(300201, 249061)
+    print "are 300201 and 249061 connected?: "
+    print arr.connected(300201, 249061)
 

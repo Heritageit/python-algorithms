@@ -26,3 +26,4 @@ def test(classes, tree):
 
 if __name__ == '__main__':
     test(my_trees, ids)
+    #test([QuickUnionWeighted], ids)
