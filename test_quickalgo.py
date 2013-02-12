@@ -6,7 +6,7 @@ from quickunion_weighted import *
 from quickfind import *
 
 # create only one array of id's so the comparison is fair
-ids = random_tree(1000000)
+#ids = random_tree(1000000)
 
 my_trees = [QuickFindUF, QuickUnionUF, 
         QuickUnionWeighted, QuickUnionPathCompression]

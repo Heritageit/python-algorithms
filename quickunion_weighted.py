@@ -52,13 +52,7 @@ class QuickUnionPathCompression(QuickUnionWeighted):
 
 
 if __name__ == '__main__':
+    from test_quickalgo import test
     tree = random_tree(1000000)
-    arr = QuickUnionWeighted(arr=tree)
-    
-    print "are 300201 and 249061 connected?: "
-    print arr.connected(300201, 249061)
-    "union(300201, 249061): "
-    arr.union(300201, 249061)
-    print "are 300201 and 249061 connected?: "
-    print arr.connected(300201, 249061)
-
+    arr = [QuickUnionWeighted, QuickUnionPathCompression]
+    test(arr, tree)
