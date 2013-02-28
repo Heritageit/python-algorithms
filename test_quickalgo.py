@@ -12,8 +12,6 @@ ids = [e for e in range(1000000)]
 my_trees = [QuickFindUF, QuickUnionUF, 
         QuickUnionWeighted, QuickUnionPathCompression]
 
-print "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
-
 def test(classes, tree):
     for e in classes:
         tmp = e(arr=deepcopy(tree))
@@ -26,4 +24,3 @@ def test(classes, tree):
 
 if __name__ == '__main__':
     test(my_trees, ids)
-    #test([QuickUnionWeighted], ids)
